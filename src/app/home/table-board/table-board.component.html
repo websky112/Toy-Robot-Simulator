@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="inputs">
+    <div class="formControl">
+      <span>X: </span>
+      <input type="number" [formControl]="xPlacement" />
+    </div>
+    <div class="formControl">
+      <span>Y: </span>
+      <input type="number" [formControl]="yPlacement" />
+    </div>
+    <div class="formControl">
+      <span>Direction: </span>
+      <select [formControl]="dirPlacement">
+        <option *ngFor="let dir of directions; let i = index" [value]="i" >{{ dir }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="board">
+    <div *ngFor="let i of cells" class="cell"></div>
+    <app-robot
+      *ngIf="curPosition"
+      [position]="curPosition"
+      [direction]="curDirection"
+    ></app-robot>
+  </div>
+</div>

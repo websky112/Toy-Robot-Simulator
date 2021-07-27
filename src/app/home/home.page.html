@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Toy Robot Simulator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <div class="guide-section">
+      <h5>COMMAND GUIDLINE</h5>
+      <p><b>Place:</b> ENTER KEY</p>
+      <p><b>Move:</b> NUMBER KEY 5</p>
+      <p><b>Right Rotate:</b> NUMBER KEY 6</p>
+      <p><b>Left Rotate:</b> NUMBER KEY 4</p>
+      <p><b>Report Logs:</b> SPACE KEY</p>
+    </div>
+    <div class="main-workspace">
+      <app-table-board (showLogsEvent)="showLogsEvent($event)"></app-table-board>
+      <app-logs-list [movements]="logs"></app-logs-list>
+    </div>
+  </div>
+</ion-content>
